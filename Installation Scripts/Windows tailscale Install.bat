@@ -130,8 +130,13 @@ if "%1" neq "ELEV" (
     echo.
 
 	tailscale login --qr --unattended
-	::tailscale login --unattended
-
+	
+	echo.
+    echo Please authenticate using the above link or QR code and then approve (if you have that enabled) the computer before...
+    echo.
+    echo Pressing any key to continue...
+    echo.
+	
 	pause
 	
 	tailscale up --unattended
