@@ -2,7 +2,7 @@
 :: Bootloader batch file for new windows tailscale workstation setup
 ::
 :: 1. Warns user if they run the script as admin
-:: 2. Elevates to run some things as admin including UAC prompt
+:: 2. Elevates to run some things as admin
 :: 3. Then runs some things as user
 ::  
 :: To add things to be run as admin (Step 1) go to the :gotPrivileges function
@@ -128,8 +128,14 @@ if "%1" neq "ELEV" (
     echo.
     echo Running final steps!
     echo.
-    
+
+	tailscale login --qr --unattended
+	::tailscale login --unattended
+
+	pause
 	
+	tailscale up --unattended
+
 	echo.
     echo Finished configuring this computer.
 	echo.
