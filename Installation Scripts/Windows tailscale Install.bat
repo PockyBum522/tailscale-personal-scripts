@@ -135,6 +135,12 @@ if "%1" neq "ELEV" (
 	pause
 	
 	tailscale up --unattended
+	
+	echo.
+    echo Running tailscale that we configured to be unattended!
+    echo.
+
+	"C:\Program Files\Tailscale\tailscale-ipn.exe"
 
 	echo.
     echo Finished configuring this computer.
